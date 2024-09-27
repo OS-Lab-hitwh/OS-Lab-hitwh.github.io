@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>1-linux-command</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+  body {
+    padding: 2cm; 
+  }
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+
+</head>
+
+<body>
+
+<ul class="toc">
+<li>
+<a href="#toc_0">Linux 常用命令</a>
+<ul>
+<li>
+<a href="#toc_1">系统信息</a>
+</li>
+<li>
+<a href="#toc_2">关机、重启以及登出</a>
+</li>
+<li>
+<a href="#toc_3">文件和目录</a>
+</li>
+<li>
+<a href="#toc_4">文件搜索</a>
+</li>
+<li>
+<a href="#toc_5">挂载一个文件系统</a>
+</li>
+<li>
+<a href="#toc_6">磁盘空间</a>
+</li>
+<li>
+<a href="#toc_7">用户和群组</a>
+</li>
+<li>
+<a href="#toc_8">文件的权限</a>
+</li>
+<li>
+<a href="#toc_9">文件的特殊属性</a>
+</li>
+<li>
+<a href="#toc_10">打包和压缩文件</a>
+</li>
+<li>
+<a href="#toc_11">DEB 包 (Debian, Ubuntu 以及类似系统)</a>
+</li>
+<li>
+<a href="#toc_12">APT 软件工具</a>
+</li>
+<li>
+<a href="#toc_13">查看文件内容</a>
+</li>
+<li>
+<a href="#toc_14">文本处理</a>
+</li>
+<li>
+<a href="#toc_15">字符设置和文件格式转换</a>
+</li>
+<li>
+<a href="#toc_16">文件系统分析</a>
+</li>
+<li>
+<a href="#toc_17">初始化一个文件系统</a>
+</li>
+<li>
+<a href="#toc_18">SWAP文件系统</a>
+</li>
+<li>
+<a href="#toc_19">备份</a>
+</li>
+<li>
+<a href="#toc_20">网络</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_21">Vim 编辑器使用入门</a>
+<ul>
+<li>
+<a href="#toc_22">三种模式</a>
+</li>
+<li>
+<a href="#toc_23">常用命令</a>
+<ul>
+<li>
+<a href="#toc_24">命令历史</a>
+</li>
+<li>
+<a href="#toc_25">启动Vim</a>
+</li>
+<li>
+<a href="#toc_26">文件命令</a>
+</li>
+<li>
+<a href="#toc_27">插入命令</a>
+</li>
+<li>
+<a href="#toc_28">查找命令</a>
+</li>
+<li>
+<a href="#toc_29">替换命令</a>
+</li>
+<li>
+<a href="#toc_30">删除命令</a>
+</li>
+<li>
+<a href="#toc_31">粘贴拷贝命令</a>
+</li>
+<li>
+<a href="#toc_32">退出命令</a>
+</li>
+<li>
+<a href="#toc_33">窗口命令</a>
+</li>
+<li>
+<a href="#toc_34">帮助命令</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h1 id="toc_0">Linux 常用命令</h1>
+
+<p>https://www.linuxcool.com/</p>
+
+<h2 id="toc_1">系统信息</h2>
+
+<blockquote>
+<ul>
+<li>arch 显示机器的处理器架构</li>
+<li>uname -m 显示机器的处理器架构</li>
+<li>uname -r 显示正在使用的内核版本 </li>
+<li>dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI) </li>
+<li>hdparm -i /dev/hda 罗列一个磁盘的架构特性 </li>
+<li>hdparm -tT /dev/sda 在磁盘上执行测试性读取操作 </li>
+<li>cat /proc/cpuinfo 显示 CPU的信息 </li>
+<li>cat /proc/interrupts 显示中断 </li>
+<li>cat /proc/meminfo 校验内存使用 </li>
+<li>cat /proc/swaps 显示哪些 swap 被使用 </li>
+<li>cat /proc/version 显示内核的版本 </li>
+<li>cat /proc/net/dev 显示网络适配器及统计 </li>
+<li>cat /proc/mounts 显示已加载的文件系统 </li>
+<li>lspci -tv 罗列 PCI 设备 </li>
+<li>lsusb -tv 显示 USB 设备 </li>
+<li>date 显示系统日期 </li>
+<li>cal 2007 显示2007年的日历表 </li>
+<li>date 041217002007.00 设置日期和时间 - 月日时分年.秒 </li>
+<li>clock -w 将时间修改保存到 BIOS</li>
+</ul>
+</blockquote>
+
+<h2 id="toc_2">关机、重启以及登出</h2>
+
+<blockquote>
+<ul>
+<li>shutdown -h now 关闭系统</li>
+<li>init 0 关闭系统</li>
+<li>telinit 0 关闭系统</li>
+<li>shutdown -h hours:minutes &amp; 按预定时间关闭系统 </li>
+<li>shutdown -c 取消按预定时间关闭系统 </li>
+<li>shutdown -r now 重启</li>
+<li>reboot 重启</li>
+<li>logout 注销</li>
+</ul>
+</blockquote>
+
+<h2 id="toc_3">文件和目录</h2>
+
+<blockquote>
+<ul>
+<li>cd /home 进入 / home 目录</li>
+<li>cd .. 返回上一级目录 </li>
+<li>cd ../.. 返回上两级目录 </li>
+<li>cd 进入个人的主目录 </li>
+<li>cd ~user1 进入个人的主目录 </li>
+<li>cd - 返回上次所在的目录 </li>
+<li>pwd 显示工作路径 </li>
+<li>ls 查看目录中的文件 </li>
+<li>ls -F 查看目录中的文件 </li>
+<li>ls -l 显示文件和目录的详细资料 </li>
+<li>ls -a 显示隐藏文件 </li>
+<li>ls <em>[0-9]</em> 显示包含数字的文件名和目录名 </li>
+<li>tree 显示文件和目录由根目录开始的树形结构</li>
+<li>lstree 显示文件和目录由根目录开始的树形结构</li>
+<li>mkdir dir1 创建一个叫做 &lsquo;dir1&rsquo; 的目录&#39; </li>
+<li>mkdir dir1 dir2 同时创建两个目录 </li>
+<li>mkdir -p /tmp/dir1/dir2 创建一个目录树 </li>
+<li>rm -f file1 删除一个叫做 &lsquo;file1&rsquo; 的文件&#39; </li>
+<li>rmdir dir1 删除一个叫做 &lsquo;dir1&rsquo; 的目录&#39; </li>
+<li>rm -rf dir1 删除一个叫做 &lsquo;dir1&rsquo; 的目录并同时删除其内容 </li>
+<li>rm -rf dir1 dir2 同时删除两个目录及它们的内容 </li>
+<li>mv dir1 new_dir 重命名/移动 一个目录 </li>
+<li>cp file1 file2 复制一个文件 </li>
+<li>cp dir/* . 复制一个目录下的所有文件到当前工作目录 </li>
+<li>cp -a /tmp/dir1 . 复制一个目录到当前工作目录 </li>
+<li>cp -a dir1 dir2 复制一个目录 </li>
+<li>cp -r dir1 dir2 复制一个目录及子目录</li>
+<li>ln -s file1 lnk1 创建一个指向文件或目录的软链接 </li>
+<li>ln file1 lnk1 创建一个指向文件或目录的物理链接 </li>
+<li>touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm) </li>
+<li>file file1 outputs the mime type of the file as text </li>
+<li>iconv -l 列出已知的编码 </li>
+<li>iconv -f fromEncoding -t toEncoding inputFile &gt; outputFile creates a new from the given input file by assuming it is encoded in fromEncoding and converting it to toEncoding. </li>
+<li>find . -maxdepth 1 -name *.jpg -print -exec convert &ldquo;{}&rdquo; -resize 80x60 &ldquo;thumbs/{}&rdquo; \; batch resize files in the current directory and send them to a thumbnails directory (requires convert from Imagemagick)</li>
+</ul>
+</blockquote>
+
+<h2 id="toc_4">文件搜索</h2>
+
+<blockquote>
+<ul>
+<li>find / -name file1 从 &lsquo;/&rsquo; 开始进入根文件系统搜索文件和目录 find / -user user1 搜索属于用户 &lsquo;user1&rsquo; 的文件和目录 </li>
+<li>find /home/user1 -name *.bin 在目录 &lsquo;/ home/user1&rsquo; 中搜索带有&#39;.bin&#39; 结尾的文件 </li>
+<li>find /usr/bin -type f -atime +100 搜索在过去100天内未被使用过的执行文件 </li>
+<li>find /usr/bin -type f -mtime -10 搜索在10天内被创建或者修改过的文件 </li>
+<li>find / -name *.rpm -exec chmod 755 &lsquo;{}&rsquo; \; 搜索以 &lsquo;.rpm&rsquo; 结尾的文件并定义其权限 </li>
+<li>find / -xdev -name *.rpm 搜索以 &lsquo;.rpm&rsquo; 结尾的文件，忽略光驱、捷盘等可移动设备 </li>
+<li>locate *.ps 寻找以 &lsquo;.ps&rsquo; 结尾的文件 - 先运行 &lsquo;updatedb&rsquo; 命令 </li>
+<li>whereis halt 显示一个二进制文件、源码或man的位置 </li>
+<li>which halt 显示一个二进制文件或可执行文件的完整路径</li>
+</ul>
+</blockquote>
+
+<h2 id="toc_5">挂载一个文件系统</h2>
+
+<blockquote>
+<ul>
+<li>mount /dev/hda2 /mnt/hda2 挂载一个叫做hda2的盘 - 确定目录 &lsquo;/ mnt/hda2&rsquo; 已经存在 </li>
+<li>umount /dev/hda2 卸载一个叫做hda2的盘 - 先从挂载点 &lsquo;/ mnt/hda2&rsquo; 退出 </li>
+<li>fuser -km /mnt/hda2 当设备繁忙时强制卸载 </li>
+<li>umount -n /mnt/hda2 运行卸载操作而不写入 /etc/mtab 文件- 当文件为只读或当磁盘写满时非常有用 </li>
+<li>mount /dev/fd0 /mnt/floppy 挂载一个软盘 </li>
+<li>mount /dev/cdrom /mnt/cdrom 挂载一个cdrom或dvdrom </li>
+<li>mount /dev/hdc /mnt/cdrecorder 挂载一个cdrw或dvdrom </li>
+<li>mount /dev/hdb /mnt/cdrecorder 挂载一个cdrw或dvdrom </li>
+<li>mount -o loop file.iso /mnt/cdrom 挂载一个文件或ISO镜像文件 </li>
+<li>mount -t vfat /dev/hda5 /mnt/hda5 挂载一个Windows FAT32文件系统 </li>
+<li>mount /dev/sda1 /mnt/usbdisk 挂载一个usb 捷盘或闪存设备 </li>
+<li>mount -t smbfs -o username=user,password=pass //WinClient/share /mnt/share 挂载一个windows网络共享</li>
+</ul>
+</blockquote>
+
+<h2 id="toc_6">磁盘空间</h2>
+
+<blockquote>
+<ul>
+<li>df -h 显示已经挂载的分区列表 </li>
+<li>ls -lSr |more 以尺寸大小排列文件和目录 </li>
+<li>du -sh dir1 估算目录 &lsquo;dir1&rsquo; 已经使用的磁盘空间&#39; </li>
+<li>du -sk * | sort -rn 以容量大小为依据依次显示文件和目录的大小 </li>
+<li>dpkg-query -W -f=&lsquo;${Installed-Size;10}t${Package}n&rsquo; | sort -k1,1n 以大小为依据显示已安装的deb包所使用的空间</li>
+</ul>
+</blockquote>
+
+<h2 id="toc_7">用户和群组</h2>
+
+<blockquote>
+<ul>
+<li>groupadd group_name 创建一个新用户组 </li>
+<li>groupdel group_name 删除一个用户组 </li>
+<li>groupmod -n new_group_name old_group_name 重命名一个用户组 useradd -c &ldquo;Name Surname &rdquo; -g admin -d /home/user1 -s /bin/bash user1 创建一个属于 &ldquo;admin&rdquo; 用户组的用户 </li>
+<li>useradd user1 创建一个新用户 </li>
+<li>userdel -r user1 删除一个用户 ( &lsquo;-r&rsquo; 排除主目录) </li>
+<li>usermod -c &ldquo;User FTP&rdquo; -g system -d /ftp/user1 -s /bin/nologin user1 修改用户属性 </li>
+<li>passwd 修改口令 </li>
+<li>passwd user1 修改一个用户的口令 (只允许root执行) </li>
+<li>chage -E 2005-12-31 user1 设置用户口令的失效期限 </li>
+<li>pwck 检查 &lsquo;/etc/passwd&rsquo; 的文件格式和语法修正以及存在的用户 grpck 检查 &lsquo;/etc/passwd&rsquo; 的文件格式和语法修正以及存在的群组 </li>
+<li>newgrp group_name 登陆进一个新的群组以改变新创建文件的预设群组 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_8">文件的权限</h2>
+
+<p>使用 &ldquo;+&rdquo; 设置权限，使用 &ldquo;-&rdquo; 用于取消 </p>
+
+<blockquote>
+<ul>
+<li>ls -lh 显示权限 </li>
+<li>ls /tmp | pr -T5 -W$COLUMNS 将终端划分成5栏显示 </li>
+<li>chmod ugo+rwx directory1 设置目录的所有人(u)、群组(g)以及其他人(o)以读（r ）、写(w)和执行(x)的权限 </li>
+<li>chmod go-rwx directory1 删除群组(g)与其他人(o)对目录的读写执行权限 </li>
+<li>chown user1 file1 改变一个文件的所有人属性 </li>
+<li>chown -R user1 directory1 改变一个目录的所有人属性并同时改变改目录下所有文件的属性 </li>
+<li>chgrp group1 file1 改变文件的群组 </li>
+<li>chown user1:group1 file1 改变一个文件的所有人和群组属性 </li>
+<li>find / -perm -u+s 罗列一个系统中所有使用了SUID控制的文件 </li>
+<li>chmod u+s /bin/file1 设置一个二进制文件的 SUID 位 - 运行该文件的用户也被赋予和所有者同样的权限 </li>
+<li>chmod u-s /bin/file1 禁用一个二进制文件的 SUID位 </li>
+<li>chmod g+s /home/public 设置一个目录的SGID 位 - 类似SUID ，不过这是针对目录的 </li>
+<li>chmod g-s /home/public 禁用一个目录的 SGID 位 </li>
+<li>chmod o+t /home/public 设置一个文件的 STIKY 位 - 只允许合法所有人删除文件 </li>
+<li>chmod o-t /home/public 禁用一个目录的 STIKY 位 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_9">文件的特殊属性</h2>
+
+<p>使用 &ldquo;+&rdquo; 设置权限，使用 &ldquo;-&rdquo; 用于取消 </p>
+
+<blockquote>
+<ul>
+<li>chattr +a file1 只允许以追加方式读写文件 </li>
+<li>chattr +c file1 允许这个文件能被内核自动压缩/解压 </li>
+<li>chattr +d file1 在进行文件系统备份时，dump程序将忽略这个文件 </li>
+<li>chattr +i file1 设置成不可变的文件，不能被删除、修改、重命名或者链接 </li>
+<li>chattr +s file1 允许一个文件被安全地删除 </li>
+<li>chattr +S file1 一旦应用程序对这个文件执行了写操作，使系统立刻把修改的结果写到磁盘 </li>
+<li>chattr +u file1 若文件被删除，系统会允许你在以后恢复这个被删除的文件 </li>
+<li>lsattr 显示特殊的属性 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_10">打包和压缩文件</h2>
+
+<blockquote>
+<ul>
+<li>bunzip2 file1.bz2 解压一个叫做 &lsquo;file1.bz2&#39;的文件 </li>
+<li>bzip2 file1 压缩一个叫做 &#39;file1&rsquo; 的文件 </li>
+<li>gunzip file1.gz 解压一个叫做 &lsquo;file1.gz&#39;的文件 </li>
+<li>gzip file1 压缩一个叫做 &#39;file1&#39;的文件 </li>
+<li>gzip -9 file1 最大程度压缩 </li>
+<li>rar a file1.rar test_file 创建一个叫做 &#39;file1.rar&rsquo; 的包 </li>
+<li>rar a file1.rar file1 file2 dir1 同时压缩 &lsquo;file1&rsquo;, &lsquo;file2&rsquo; 以及目录 &lsquo;dir1&rsquo; </li>
+<li>rar x file1.rar 解压rar包 </li>
+<li>unrar x file1.rar 解压rar包 </li>
+<li>tar -cvf archive.tar file1 创建一个非压缩的 tarball </li>
+<li>tar -cvf archive.tar file1 file2 dir1 创建一个包含了 &lsquo;file1&rsquo;, &lsquo;file2&rsquo; 以及 &lsquo;dir1&#39;的档案文件 </li>
+<li>tar -tf archive.tar 显示一个包中的内容 </li>
+<li>tar -xvf archive.tar 释放一个包 </li>
+<li>tar -xvf archive.tar -C /tmp 将压缩包释放到 /tmp目录下 </li>
+<li>tar -cvfj archive.tar.bz2 dir1 创建一个bzip2格式的压缩包 </li>
+<li>tar -jxvf archive.tar.bz2 解压一个bzip2格式的压缩包 </li>
+<li>tar -cvfz archive.tar.gz dir1 创建一个gzip格式的压缩包 </li>
+<li>tar -zxvf archive.tar.gz 解压一个gzip格式的压缩包 </li>
+<li>zip file1.zip file1 创建一个zip格式的压缩包 </li>
+<li>zip -r file1.zip file1 file2 dir1 将几个文件和目录同时压缩成一个zip格式的压缩包 </li>
+<li>unzip file1.zip 解压一个zip格式压缩包 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_11">DEB 包 (Debian, Ubuntu 以及类似系统)</h2>
+
+<blockquote>
+<ul>
+<li>dpkg -i package.deb 安装/更新一个 deb 包 </li>
+<li>dpkg -r package_name 从系统删除一个 deb 包 </li>
+<li>dpkg -l 显示系统中所有已经安装的 deb 包 </li>
+<li>dpkg -l | grep httpd 显示所有名称中包含 &ldquo;httpd&rdquo; 字样的deb包 </li>
+<li>dpkg -s package_name 获得已经安装在系统中一个特殊包的信息 </li>
+<li>dpkg -L package_name 显示系统中已经安装的一个deb包所提供的文件列表 </li>
+<li>dpkg &ndash;contents package.deb 显示尚未安装的一个包所提供的文件列表 </li>
+<li>dpkg -S /bin/ping 确认所给的文件由哪个deb包提供 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_12">APT 软件工具</h2>
+
+<blockquote>
+<ul>
+<li>apt-get install package_name 安装/更新一个 deb 包 </li>
+<li>apt-cdrom install package_name 从光盘安装/更新一个 deb 包 </li>
+<li>apt-get update 升级列表中的软件包 </li>
+<li>apt-get upgrade 升级所有已安装的软件 </li>
+<li>apt-get remove package_name 从系统删除一个deb包 </li>
+<li>apt-get check 确认依赖的软件仓库正确 </li>
+<li>apt-get clean 从下载的软件包中清理缓存 </li>
+<li>apt-cache search searched-package 返回包含所要搜索字符串的软件包名称 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_13">查看文件内容</h2>
+
+<blockquote>
+<ul>
+<li>cat file1 从第一个字节开始正向查看文件的内容 </li>
+<li>tac file1 从最后一行开始反向查看一个文件的内容 </li>
+<li>more file1 查看一个长文件的内容 </li>
+<li>less file1 类似于 &#39;more&rsquo; 命令，但是它允许在文件中和正向操作一样的反向操作 </li>
+<li>head -2 file1 查看一个文件的前两行 </li>
+<li>tail -2 file1 查看一个文件的最后两行 </li>
+<li>tail -f /var/log/messages 实时查看被添加到一个文件中的内容 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_14">文本处理</h2>
+
+<blockquote>
+<ul>
+<li>cat file1 file2 &hellip; | command &lt;&gt; file1_in.txt_or_file1_out.txt general syntax for text manipulation using PIPE, STDIN and STDOUT </li>
+<li>cat file1 | command( sed, grep, awk, grep, etc&hellip;) &gt; result.txt 合并一个文件的详细说明文本，并将简介写入一个新文件中 </li>
+<li>cat file1 | command( sed, grep, awk, grep, etc&hellip;) &gt;&gt; result.txt 合并一个文件的详细说明文本，并将简介写入一个已有的文件中 </li>
+<li>grep Aug /var/log/messages 在文件 &lsquo;/var/log/messages&#39;中查找关键词&quot;Aug&quot; </li>
+<li>grep ^Aug /var/log/messages 在文件 &rsquo;/var/log/messages&#39;中查找以&quot;Aug&quot;开始的词汇 </li>
+<li>grep [0-9] /var/log/messages 选择 &lsquo;/var/log/messages&rsquo; 文件中所有包含数字的行 </li>
+<li>grep Aug -R /var/log/* 在目录 &lsquo;/var/log&rsquo; 及随后的目录中搜索字符串&quot;Aug&quot; </li>
+<li>sed &rsquo;s/stringa1/stringa2/g&#39; example.txt 将example.txt文件中的 &ldquo;string1&rdquo; 替换成 &ldquo;string2&rdquo; </li>
+<li>sed &lsquo;/^$/d&rsquo; example.txt 从example.txt文件中删除所有空白行 </li>
+<li>sed &lsquo;/ *#/d; /^$/d&rsquo; example.txt 从example.txt文件中删除所有注释和空白行 </li>
+<li>echo &lsquo;esempio&rsquo; | tr &lsquo;[:lower:]&rsquo; &lsquo;[:upper:]&rsquo; 合并上下单元格内容 </li>
+<li>sed -e &lsquo;1d&rsquo; result.txt 从文件example.txt 中排除第一行 </li>
+<li>sed -n &lsquo;/stringa1/p&rsquo; 查看只包含词汇 &ldquo;string1&quot;的行 </li>
+<li>sed -e &rsquo;s/ *$//&lsquo; example.txt 删除每一行最后的空白字符 </li>
+<li>sed -e &rsquo;s/stringa1//g&rsquo; example.txt 从文档中只删除词汇 &quot;string1&rdquo; 并保留剩余全部 </li>
+<li>sed -n &lsquo;1,5p;5q&rsquo; example.txt 查看从第一行到第5行内容 </li>
+<li>sed -n &lsquo;5p;5q&rsquo; example.txt 查看第5行 </li>
+<li>sed -e &rsquo;s/00*/0/g&#39; example.txt 用单个零替换多个零 </li>
+<li>cat -n file1 标示文件的行数 </li>
+<li>cat example.txt | awk &lsquo;NR%2==1&rsquo; 删除example.txt文件中的所有偶数行 </li>
+<li>echo a b c | awk &lsquo;{print $1}&rsquo; 查看一行第一栏 </li>
+<li>echo a b c | awk &lsquo;{print $1,$3}&rsquo; 查看一行的第一和第三栏 </li>
+<li>paste file1 file2 合并两个文件或两栏的内容 </li>
+<li>paste -d &lsquo;+&rsquo; file1 file2 合并两个文件或两栏的内容，中间用&quot;+&ldquo;区分 </li>
+<li>sort file1 file2 排序两个文件的内容 </li>
+<li>sort file1 file2 | uniq 取出两个文件的并集(重复的行只保留一份) </li>
+<li>sort file1 file2 | uniq -u 删除交集，留下其他的行 </li>
+<li>sort file1 file2 | uniq -d 取出两个文件的交集(只留下同时存在于两个文件中的文件) </li>
+<li>comm -1 file1 file2 比较两个文件的内容只删除 &lsquo;file1&rsquo; 所包含的内容 </li>
+<li>comm -2 file1 file2 比较两个文件的内容只删除 &lsquo;file2&rsquo; 所包含的内容 </li>
+<li>comm -3 file1 file2 比较两个文件的内容只删除两个文件共有的部分 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_15">字符设置和文件格式转换</h2>
+
+<blockquote>
+<ul>
+<li>dos2unix filedos.txt fileunix.txt 将一个文本文件的格式从MSDOS转换成UNIX </li>
+<li>unix2dos fileunix.txt filedos.txt 将一个文本文件的格式从UNIX转换成MSDOS </li>
+<li>recode ..HTML &lt; page.txt &gt; page.html 将一个文本文件转换成html </li>
+<li>recode -l | more 显示所有允许的转换格式 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_16">文件系统分析</h2>
+
+<blockquote>
+<ul>
+<li>badblocks -v /dev/hda1 检查磁盘hda1上的坏磁块 </li>
+<li>fsck /dev/hda1 修复/检查hda1磁盘上linux文件系统的完整性 </li>
+<li>fsck.ext2 /dev/hda1 修复/检查hda1磁盘上ext2文件系统的完整性 </li>
+<li>e2fsck /dev/hda1 修复/检查hda1磁盘上ext2文件系统的完整性 </li>
+<li>e2fsck -j /dev/hda1 修复/检查hda1磁盘上ext3文件系统的完整性 </li>
+<li>fsck.ext3 /dev/hda1 修复/检查hda1磁盘上ext3文件系统的完整性 </li>
+<li>fsck.vfat /dev/hda1 修复/检查hda1磁盘上fat文件系统的完整性</li>
+<li>fsck.msdos /dev/hda1 修复/检查hda1磁盘上dos文件系统的完整性 </li>
+<li>dosfsck /dev/hda1 修复/检查hda1磁盘上dos文件系统的完整性 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_17">初始化一个文件系统</h2>
+
+<blockquote>
+<ul>
+<li>mkfs /dev/hda1 在hda1分区创建一个文件系统 </li>
+<li>mke2fs /dev/hda1 在hda1分区创建一个linux ext2的文件系统 </li>
+<li>mke2fs -j /dev/hda1 在hda1分区创建一个linux ext3(日志型)的文件系统 </li>
+<li>mkfs -t vfat 32 -F /dev/hda1 创建一个 FAT32 文件系统 </li>
+<li>fdformat -n /dev/fd0 格式化一个软盘 </li>
+<li>mkswap /dev/hda3 创建一个swap文件系统 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_18">SWAP文件系统</h2>
+
+<blockquote>
+<ul>
+<li>mkswap /dev/hda3 创建一个swap文件系统 </li>
+<li>swapon /dev/hda3 启用一个新的swap文件系统 </li>
+<li>swapon /dev/hda2 /dev/hdb3 启用两个swap分区 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_19">备份</h2>
+
+<blockquote>
+<ul>
+<li>dump -0aj -f /tmp/home0.bak /home 制作一个 &lsquo;/home&rsquo; 目录的完整备份 </li>
+<li>dump -1aj -f /tmp/home0.bak /home 制作一个 &lsquo;/home&rsquo; 目录的交互式备份 </li>
+<li>restore -if /tmp/home0.bak 还原一个交互式备份 </li>
+<li>rsync -rogpav &ndash;delete /home /tmp 同步两边的目录 </li>
+<li>rsync -rogpav -e ssh &ndash;delete /home ip_address:/tmp 通过SSH通道rsync </li>
+<li>rsync -az -e ssh &ndash;delete ip_addr:/home/public /home/local 通过ssh和压缩将一个远程目录同步到本地目录 </li>
+<li>rsync -az -e ssh &ndash;delete /home/local ip_addr:/home/public 通过ssh和压缩将本地目录同步到远程目录 </li>
+<li>dd bs=1M if=/dev/hda | gzip | ssh user@ip_addr &lsquo;dd of=hda.gz&rsquo; 通过ssh在远程主机上执行一次备份本地磁盘的操作 </li>
+<li>dd if=/dev/sda of=/tmp/file1 备份磁盘内容到一个文件 </li>
+<li>tar -Puf backup.tar /home/user 执行一次对 &lsquo;/home/user&rsquo; 目录的交互式备份操作 </li>
+<li>( cd /tmp/local/ &amp;&amp; tar c . ) | ssh -C user@ip_addr &lsquo;cd /home/share/ &amp;&amp; tar x -p&rsquo; 通过ssh在远程目录中复制一个目录内容 </li>
+<li>( tar c /home ) | ssh -C user@ip_addr &lsquo;cd /home/backup-home &amp;&amp; tar x -p&rsquo; 通过ssh在远程目录中复制一个本地目录 </li>
+<li>tar cf - . | (cd /tmp/backup ; tar xf - ) 本地将一个目录复制到另一个地方，保留原有权限及链接 </li>
+<li>find /home/user1 -name &lsquo;*.txt&rsquo; | xargs cp -av &ndash;target-directory=/home/backup/ &ndash;parents 从一个目录查找并复制所有以 &lsquo;.txt&rsquo; 结尾的文件到另一个目录 </li>
+<li>find /var/log -name &lsquo;*.log&rsquo; | tar cv &ndash;files-from=- | bzip2 &gt; log.tar.bz2 查找所有以 &lsquo;.log&rsquo; 结尾的文件并做成一个bzip包 </li>
+<li>dd if=/dev/hda of=/dev/fd0 bs=512 count=1 做一个将 MBR (Master Boot Record)内容复制到软盘的动作 </li>
+<li>dd if=/dev/fd0 of=/dev/hda bs=512 count=1 从已经保存到软盘的备份中恢复MBR内容 </li>
+</ul>
+</blockquote>
+
+<h2 id="toc_20">网络</h2>
+
+<blockquote>
+<ul>
+<li>ifconfig eth0 显示一个以太网卡的配置 </li>
+<li>ifup eth0 启用一个 &lsquo;eth0&rsquo; 网络设备 </li>
+<li>ifdown eth0 禁用一个 &lsquo;eth0&rsquo; 网络设备 </li>
+<li>ifconfig eth0 192.168.1.1 netmask 255.255.255.0 控制IP地址 </li>
+<li>ifconfig eth0 promisc 设置 &lsquo;eth0&rsquo; 成混杂模式以嗅探数据包 (sniffing) </li>
+<li>dhclient eth0 以dhcp模式启用 &lsquo;eth0&rsquo; </li>
+<li>route -n show routing table </li>
+<li>route add -net 0/0 gw IP_Gateway configura default gateway </li>
+<li>route add -net 192.168.0.0 netmask 255.255.0.0 gw 192.168.1.1 configure static route to reach network &lsquo;192.168.0.0/16&rsquo; </li>
+<li>route del 0/0 gw IP_gateway remove static route </li>
+<li>echo &quot;1&rdquo; &gt; /proc/sys/net/ipv4/ip_forward activate ip routing </li>
+<li>hostname show hostname of system </li>
+<li>host www.example.com lookup hostname to resolve name to ip address and viceversa</li>
+<li>nslookup www.example.com lookup hostname to resolve name to ip address and viceversa</li>
+<li>ip link show show link status of all interfaces </li>
+<li>mii-tool eth0 show link status of &lsquo;eth0&rsquo; </li>
+<li>ethtool eth0 show statistics of network card &lsquo;eth0&rsquo; </li>
+<li>netstat -tup show all active network connections and their PID </li>
+<li>netstat -tupl show all network services listening on the system and their PID </li>
+<li>tcpdump tcp port 80 show all HTTP traffic </li>
+<li>iwlist scan show wireless networks </li>
+<li>iwconfig eth1 show configuration of a wireless network card </li>
+<li>hostname show hostname </li>
+<li>host www.example.com lookup hostname to resolve name to ip address and viceversa </li>
+<li>nslookup www.example.com lookup hostname to resolve name to ip address and viceversa </li>
+<li>whois www.example.com lookup on Whois database </li>
+</ul>
+</blockquote>
+
+<h1 id="toc_21">Vim 编辑器使用入门</h1>
+
+<p>Vim是从 vi 发展出来的一个文本编辑器。代码补全、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用，和Emacs并列成为了Unix系统用户最喜欢的文本编辑器</p>
+
+<h2 id="toc_22">三种模式</h2>
+
+<blockquote>
+<ul>
+<li>插入模式(输入模式):进入Vim后，按下i进入插入模式，按下键从插入模式切换至编辑模式 </li>
+<li>编辑模式:进入Vim后默认进入编辑模式，该模式用于移动和操纵文本 </li>
+<li>命令模式:用于执行冒号命令，比如保存，查找/替换以及配置vim等</li>
+</ul>
+</blockquote>
+
+<h2 id="toc_23">常用命令</h2>
+
+<h3 id="toc_24">命令历史</h3>
+
+<blockquote>
+<p>以 : 和 / 开头的命令都有历史纪录，可以首先键入:或/然后按上下箭头来选择某个历史命令</p>
+</blockquote>
+
+<h3 id="toc_25">启动Vim</h3>
+
+<blockquote>
+<p>在命令行窗口(终端)中输入以下命令即可 vim 直接启动vim vim filename 打开vim并创建名为filename的文件</p>
+</blockquote>
+
+<h3 id="toc_26">文件命令</h3>
+
+<blockquote>
+<ul>
+<li>vim file 打开单个文件 vim file1 file2 file3 &hellip; 同时打开多个文件 </li>
+<li>:open file 在vim窗口中打开一个新文件 </li>
+<li>:split file 在新窗口中打开文件 </li>
+<li>:bn 切换到下一个文件 </li>
+<li>:bp 切换到上一个文件</li>
+</ul>
+</blockquote>
+
+<h3 id="toc_27">插入命令</h3>
+
+<blockquote>
+<ul>
+<li>i 在当前位置生前插入 </li>
+<li>I 在当前行首插入 </li>
+<li>a 在当前位置后插入 </li>
+<li>A 在当前行尾插入 </li>
+<li>o 在当前行之后插入一行 </li>
+<li>O 在当前行之前插入一行</li>
+</ul>
+</blockquote>
+
+<h3 id="toc_28">查找命令</h3>
+
+<blockquote>
+<ul>
+<li>/text 查找text，按n健查找下一个，按N健查找前一个。 </li>
+<li>?text 查找text，反向查找，按n健查找下一个，按N健查找前一个。</li>
+</ul>
+</blockquote>
+
+<h3 id="toc_29">替换命令</h3>
+
+<blockquote>
+<ul>
+<li>ra 将当前字符替换为a，当期字符即光标所在字符。 </li>
+<li>s/old/new/ 用old替换new，替换当前行的第一个匹配 </li>
+<li>s/old/new/g 用old替换new，替换当前行的所有匹配 </li>
+<li>%s/old/new/ 用old替换new，替换所有行的第一个匹配 </li>
+<li>%s/old/new/g 用old替换new，替换整个文件的所有匹配</li>
+</ul>
+</blockquote>
+
+<h3 id="toc_30">删除命令</h3>
+
+<blockquote>
+<ul>
+<li>x 删除当前字符 </li>
+<li>3x 删除当前光标开始向后三个字符 </li>
+<li>X 删除当前字符的前一个字符。</li>
+<li>X=dh dl 删除当前字符， </li>
+<li>dl=x dh 删除前一个字符 </li>
+<li>dd 删除当前行 </li>
+<li>dj 删除上一行 </li>
+<li>dk 删除下一行 </li>
+<li>10d 删除当前行开始的10行。</li>
+</ul>
+</blockquote>
+
+<h3 id="toc_31">粘贴拷贝命令</h3>
+
+<blockquote>
+<ul>
+<li>yy 拷贝当前行 </li>
+<li>nyy 拷贝当前后开始的n行，比如2yy拷贝当前行及其下一行。 </li>
+<li>p 在当前光标后粘贴,如果之前使用了yy命令来复制一行，那么就在当前行的下一行粘贴。 </li>
+<li>shift+p 在当前行前粘贴</li>
+</ul>
+</blockquote>
+
+<h3 id="toc_32">退出命令</h3>
+
+<blockquote>
+<ul>
+<li>:wq 保存并退出 </li>
+<li>ZZ 保存并退出 </li>
+<li>:q! 强制退出并忽略所有更改 </li>
+<li>:e! 放弃所有修改，并打开原来文件。</li>
+</ul>
+</blockquote>
+
+<h3 id="toc_33">窗口命令</h3>
+
+<blockquote>
+<ul>
+<li>:split或new 打开一个新窗口，光标停在顶层的窗口上 </li>
+<li>:split file或:new file 用新窗口打开文件 Ctrl+ww 移动到下一个窗口 Ctrl+wj 移动到下方的窗口 Ctrl+wk 移动到上方的窗口</li>
+<li>:close 最后一个窗口不能使用此命令，可以防止意外退出vim。 </li>
+<li>:q 如果是最后一个被关闭的窗口，那么将退出vim。 ZZ 保存并退出。 </li>
+<li>:only 关闭所有窗口，只保留当前窗口</li>
+</ul>
+</blockquote>
+
+<h3 id="toc_34">帮助命令</h3>
+
+<blockquote>
+<ul>
+<li>:help or F1 显示整个帮助 </li>
+<li>:help xxx 显示xxx的帮助，比如 :help i, :help CTRL-[(即Ctrl+[的帮助)。 :help &lsquo;number&rsquo; Vim选项的帮助用单引号括起 :help 特殊键的帮助用&lt;&gt;扩起 :help -t Vim启动参数的帮助用</li>
+</ul>
+</blockquote>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+
+</body>
+
+</html>
